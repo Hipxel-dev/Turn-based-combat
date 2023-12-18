@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://enemy/scripts/enemy_lunger.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 2.4, 1 )
+
+[node name="enemy_lunger" type="KinematicBody" groups=["enemy"]]
+script = ExtResource( 1 )
+name1 = "Lunger"
+
+[node name="CSGTorus" type="CSGTorus" parent="."]
+transform = Transform( 0.182129, 0.214585, -0.044275, -0.107516, 0.137693, 0.225075, 0.190912, -0.127168, 0.168994, 0, 0, 0 )
+inner_radius = 1.0
+outer_radius = 2.0
+sides = 32
+ring_sides = 11
+
+[node name="collision" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
